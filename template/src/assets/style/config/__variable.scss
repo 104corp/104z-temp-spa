@@ -1,0 +1,44 @@
+// susy
+$columns: 24;
+$susy: (
+  'columns': susy-repeat($columns),
+  'gutters': 20px,
+  'debug': false,
+  'container-spread': 'wide',
+  'svg-grid-colors': hsla(180, 40%, 60%, .5),
+);
+
+// breakpoints
+$breakpoint: (
+  xl:
+  map-merge(
+    $susy, (
+      'max-width': theme('screens.xl.max'),
+    )
+  ),
+  lg:
+  map-merge(
+    $susy, (
+      'max-width': theme('screens.lg.max'),
+    )
+  ),
+  md:
+  map-merge(
+    $susy, (
+      'max-width': theme('screens.md.max'),
+    )
+  ),
+  sm:
+  map-merge(
+    $susy, (
+      'max-width': theme('screens.sm.max'),
+    )
+  ),
+);
+
+// colors
+$white: #ffffff; // 不使用 theme('colors.white'), 解析會有問題
+$black: #000000;
+
+$mainWidth: theme('screens.xl.max');
+$lightLevel: 10%;

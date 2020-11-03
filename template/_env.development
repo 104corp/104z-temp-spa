@@ -1,0 +1,5 @@
+<%_ if (!options.isMKT) { _%>
+NODE_ENV=development
+BASE_URL=<%= options.baseUrl %>
+VUE_APP_MODE=development
+<%_ } _%>

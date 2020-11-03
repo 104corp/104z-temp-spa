@@ -1,0 +1,29 @@
+%transparent {
+  opacity: 0;
+}
+
+%transparent-active {
+  transition: opacity .5s ease;
+}
+
+// fade
+.animate-fade-enter,
+.animate-fade-leave-to {
+  @extend %transparent;
+}
+
+.animate-fade-enter-to,
+.animate-fade-leave {
+  opacity: 1;
+}
+
+.animate-fade-enter-active,
+.animate-fade-leave-active {
+  @extend %transparent-active;
+}
+
+@keyframes animate-rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}

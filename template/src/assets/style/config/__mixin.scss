@@ -1,0 +1,80 @@
+@mixin text-overflow($line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  word-break: break-all;
+}
+
+@mixin with-layout($config) {
+  //  parse and normalize any shorthand arguments
+  $config: susy-compile($config);
+
+  // record the global settings -
+  // and update the global variable with our new settings
+  $global: $susy;
+  $susy: map-merge($susy, $config) !global;
+
+  // any content inside this mixin
+  // will use the local settings
+  @content;
+
+  // return the global variable to its initial value
+  $susy: $global !global;
+}
+
+@mixin susy-breakpoint($config) {
+  //  parse and normalize any shorthand arguments
+  $config: susy-compile($config);
+
+  // build min-and-max queries
+  $min: map-get($config, 'min-width');
+  $min: if($min, '(min-width: #{$min})', null);
+  $max: map-get($config, 'max-width');
+  $max: if($max, '(max-width: #{$max})', null);
+
+  // combine them if we need both
+  $and: if($min and $max, '#{$min} and #{$max}', null);
+  // or fall back to the value we need…
+  $query: $and or $min or $max;
+
+  // apply the results…
+  @media #{$query} {
+    @include with-layout($config) {
+      @content;
+    }
+  }
+}
+
+@mixin container($width: 100%, $config: $susy) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $width;
+
+  @if map-get($config, 'debug') {
+    background: susy-svg-grid($grid: $config) no-repeat scroll;
+  }
+}
+
+@mixin span($span: 0, $full: false) {
+  @if $full {
+    @if $span != 0 {
+      width: span(
+        $span, (
+          'gutters': 0,
+        )
+      );
+    }
+  } @else {
+    @if $span != 0 {
+      width: span($span);
+    }
+    margin-right: gutter() / 2;
+    margin-left: gutter() / 2;
+  }
+}

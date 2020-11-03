@@ -1,0 +1,18 @@
+// color
+@function light($color) {
+  @return adjust-color($color, $lightness: $lightLevel * 2);
+}
+
+@function dark($color) {
+  @return adjust-color($color, $lightness: $lightLevel * -1);
+}
+
+@function useGrayscale($level: 1) {
+  @if $level <= 1 {
+    @return $white;
+  } @else if $level >= 5 {
+    @return $black;
+  } @else {
+    @return adjust-color($black, $lightness: $lightLevel * (5 - $level) * 2);
+  }
+}
