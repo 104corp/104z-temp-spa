@@ -5,7 +5,7 @@
   "router": false,
   "routerHistoryMode": false,
   "vuex": false,
-  "cssPreprocessor": "node-sass",
+  "cssPreprocessor": "dart-sass",
   "plugins": {
     "@vue/cli-plugin-babel": {
       "version": "~4.5.0"

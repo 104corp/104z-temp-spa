@@ -55,6 +55,14 @@ module.exports = (api, options, rootOptions) => {
       }
     })
   }
+  // 自動產憑證 script
+  if(options.needDevContainer) { 
+    api.extendPackage({
+      "scripts": {
+        "init": "sh script/generateKey.sh"
+      }
+    })
+  }
 
   // 安裝額外 plugin
   const pluginMap = {
