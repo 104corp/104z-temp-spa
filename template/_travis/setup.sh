@@ -18,7 +18,7 @@ if [[ ${TRAVIS_BRANCH} == 'testing' ]]; then
   export AWS_ACCESS_KEY_ID=$dev_access_key_id
   export AWS_SECRET_ACCESS_KEY=$dev_secret_access_key
   export static_bucket='static_bucket_name'
-  export NODE_ENV='lab'
+  export NODE_ENV='development'
 
   AWS_ACCESS_KEY_ID=$dev_access_key_id AWS_SECRET_ACCESS_KEY=$dev_secret_access_key aws s3 rm s3://static_bucket_name<%= options.baseUrl %> --recursive --exclude "log/*"
 
@@ -28,7 +28,7 @@ elif [[ ${TRAVIS_BRANCH} == 'develop' ]]; then
   export AWS_ACCESS_KEY_ID=$dev_access_key_id
   export AWS_SECRET_ACCESS_KEY=$dev_secret_access_key
   export static_bucket='static_bucket_name'
-  export NODE_ENV='lab'
+  export NODE_ENV='development'
 
   AWS_ACCESS_KEY_ID=$dev_access_key_id AWS_SECRET_ACCESS_KEY=$dev_secret_access_key aws s3 rm s3://static_bucket_name<%= options.baseUrl %> --recursive --exclude "log/*"
 

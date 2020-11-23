@@ -1,5 +1,4 @@
 <%_ if (!options.isMKT) { _%>
-NODE_ENV=production
 BASE_URL=<%= options.baseUrl %>
-VUE_APP_MODE=production
+NODE_ENV=production
 <%_ } _%>
