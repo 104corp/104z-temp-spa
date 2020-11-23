@@ -8,6 +8,9 @@ import VueMeta from 'vue-meta'
 <%_ } _%>
 
 Vue.config.productionTip = false
+Vue.config.debug = process.env.NODE_ENV !== 'production'
+Vue.config.devtools = process.env.NODE_ENV !== 'production'
+
 Vue.use(storeModule)
 <%_ if (options.plugins.find(el => el === 'vue-meta')) { _%>
 Vue.use(VueMeta)
