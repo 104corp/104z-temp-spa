@@ -1,7 +1,7 @@
 module.exports = (api, options, rootOptions) => {
 
   let scriptBuild = ''
-  scriptBuild += "vue-cli-service build "
+  scriptBuild += "env BUILD=true vue-cli-service build "
   if (!options.isMKT) scriptBuild += "--mode $NODE_ENV"
 
   api.extendPackage({
@@ -18,6 +18,7 @@ module.exports = (api, options, rootOptions) => {
     },
     "devDependencies": {
       "compression-webpack-plugin": "^5.0.1",
+      "css-minimizer-webpack-plugin": "^1.1.5",
       "deepmerge": "^4.2.2",
       "lint-staged": "^9.5.0",
       "stylelint": "^13.7.2",

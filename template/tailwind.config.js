@@ -10,7 +10,7 @@ const config = {
   variants: {},
   plugins: [],
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
+    enabled: process.env.BUILD === 'true',
     content: ['./src/**/*.html', './src/**/*.vue']
   },
   future: {
