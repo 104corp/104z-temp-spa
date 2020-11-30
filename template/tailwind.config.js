@@ -1,6 +1,6 @@
 const deepMerge = require('deepmerge')
 const configDefault = require('./config/tailwind.config.default')
-// const clientConfig = require('./config/tailwind/tailwind.config.c')
+// const clientConfig = require('./config/tailwind.config.c')
 const config = {
   theme: {},
   corePlugins: {
