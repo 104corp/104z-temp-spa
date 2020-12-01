@@ -1,4 +1,8 @@
-export const types = {}
+export const types = {
+  SERVER_ERROR: 'SERVER_ERROR',
+  EXAMPLE_NOT_AUTH: 'EXAMPLE_NOT_AUTH',
+  EXAMPLE_NOT_FOUND: 'EXAMPLE_NOT_FOUND'
+}
 
 export const example = () => {
   return {
