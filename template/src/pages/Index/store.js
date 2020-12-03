@@ -1,7 +1,19 @@
+import * as service from './service'
+
 const state = () => ({})
 const getters = {}
-const mutations = {}
-const actions = {}
+const mutations = {
+  SET_EXAMPLE (state, { data }) {
+    state.data = data
+  }
+}
+const actions = {
+  async GET_EXAMPLE ({ dispatch, commit }) {
+    const result = await dispatch('API', { reqContext: service.example() })
+    commit('SET_EXAMPLE', result.data)
+    return result
+  }
+}
 
 export default {
   namespaced: true,
