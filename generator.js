@@ -13,6 +13,8 @@ module.exports = (api, options, rootOptions) => {
       "lint:style": "stylelint --cache src/**/*.{vue,scss} --fix"
     },
     "dependencies": {
+      "axios": "^0.21.0",
+      "detect-browser": "^5.2.0",
       "vue-router": "^3.2.0",
       "vuex": "^3.4.0"
     },

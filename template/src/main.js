@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import storeModule from './plugins/storeModule'
+import detectBrowser from './plugins/detectBrowser'
 <%_ if (options.plugins.find(el => el === 'vue-meta')) { _%>
 import VueMeta from 'vue-meta'
 <%_ } _%>
@@ -12,6 +13,7 @@ Vue.config.debug = process.env.NODE_ENV !== 'production'
 Vue.config.devtools = process.env.NODE_ENV !== 'production'
 
 Vue.use(storeModule)
+Vue.use(detectBrowser)
 <%_ if (options.plugins.find(el => el === 'vue-meta')) { _%>
 Vue.use(VueMeta)
 <%_ } _%>

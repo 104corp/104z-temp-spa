@@ -48,7 +48,6 @@ module.exports = [
     message: '安裝額外套件: ',
     choices: [
       { name: 'vue-meta', checked: true },
-      { name: 'axios'}, 
       { name: 'gsap'}
     ]
   }
