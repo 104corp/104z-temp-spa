@@ -3,10 +3,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   theme: {
     screens: {
-      xl: { max: '1680px' },
-      lg: { max: '1280px' },
-      md: { max: '1024px' },
-      sm: { max: '360px' }
+      sm: { min: '360px' },
+      md: { min: '1024px' },
+      lg: { min: '1281px' },
+      xl: { min: '1680px' }
     },
     colors: {
       lake: {
@@ -55,12 +55,12 @@ module.exports = {
     plugin(function ({ addBase, addComponents, addUtilities, config }) {
       addComponents({
         '.container': {
-          maxWidth: '1440px',
+          maxWidth: '100%',
           margin: '0 auto',
-          '@screen xl': { maxWidth: '1168px' },
-          '@screen lg': { maxWidth: '1024px' },
+          '@screen sm': { maxWidth: '100%' },
           '@screen md': { maxWidth: '1024px' },
-          '@screen sm': { maxWidth: '360px' }
+          '@screen lg': { maxWidth: '1168px' },
+          '@screen xl': { maxWidth: '1440px' }
         }
       })
     })

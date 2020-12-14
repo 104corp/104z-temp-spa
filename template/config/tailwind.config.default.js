@@ -2,12 +2,6 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
-    screens: {
-      xl: { max: '1200px' },
-      lg: { max: '960px' },
-      md: { max: '768px' },
-      sm: { max: '480px' }
-    },
     spacing: () => {
       const multipleFour = {}
       for (let i = 2; i <= 120; i++) {

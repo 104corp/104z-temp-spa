@@ -1,6 +1,6 @@
 const deepMerge = require('deepmerge')
 const configDefault = require('./config/tailwind.config.default')
-// const clientConfig = require('./config/tailwind.config.c')
+const clientConfig = require('./config/tailwind.config.c')
 const config = {
   theme: {},
   corePlugins: {
@@ -23,6 +23,6 @@ const config = {
 
 module.exports = deepMerge.all([
   configDefault, 
-  // clientConfig, 需要用 c style 的話, 再引用
+  clientConfig,  // B & C 各別設定
   config
 ])
