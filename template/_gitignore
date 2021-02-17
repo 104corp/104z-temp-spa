@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # ssl key
 *.pem
+
+# test files
+coverage

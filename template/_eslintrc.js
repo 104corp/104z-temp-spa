@@ -64,5 +64,15 @@ module.exports = {
         math: 'never'
       }
     ]
-  }
+  },
+  overrides: [
+    {
+      files: [
+        '**/?(*.)test.[jt]s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
 }
