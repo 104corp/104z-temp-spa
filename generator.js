@@ -8,6 +8,7 @@ module.exports = (api, options, rootOptions) => {
     "scripts": {
       "serve": "vue-cli-service serve --port 3000",
       "build": scriptBuild,
+      "test:unit": "vue-cli-service test:unit",
       "lint": "npm run lint:script && npm run lint:style",
       "lint:script": "vue-cli-service lint",
       "lint:style": "stylelint --cache src/**/*.{vue,scss} --fix"
@@ -19,6 +20,7 @@ module.exports = (api, options, rootOptions) => {
       "vuex": "^3.4.0"
     },
     "devDependencies": {
+      "@vue/cli-plugin-unit-jest": "^4.5.11",
       "compression-webpack-plugin": "^5.0.1",
       "css-minimizer-webpack-plugin": "^1.1.5",
       "deepmerge": "^4.2.2",
